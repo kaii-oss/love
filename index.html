@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff8fab;--pink2:#ffb6c9;--pink3:#ffd6e3;--soft:#fff0f5;--cream:#fffaf7;--text:#684c58;--darkpink:#d85c82;--shadow:rgba(183,91,121,.18)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden;font-family:'Poppins',sans-serif;color:var(--text);background:radial-gradient(circle at 10% 20%,#ffdce8 0 2px,transparent 3px),radial-gradient(circle at 80% 30%,#ffdce8 0 2px,transparent 3px),radial-gradient(circle at 30% 80%,#ffe4ed 0 2px,transparent 3px),linear-gradient(135deg,#fff4f7,#ffeaf1)}
+.bg-heart{position:fixed;pointer-events:none;z-index:0;opacity:.45;animation:float 5s ease-in-out infinite}.bg-heart:nth-child(1){left:5%;top:15%;font-size:50px}.bg-heart:nth-child(2){right:7%;top:22%;font-size:35px;animation-delay:1s}.bg-heart:nth-child(3){left:9%;bottom:15%;font-size:30px;animation-delay:2s}.bg-heart:nth-child(4){right:10%;bottom:12%;font-size:55px;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-15px) rotate(5deg)}}
+.wrapper{position:relative;z-index:2;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:30px 16px}
+.letter{position:relative;width:min(680px,100%);min-height:690px;padding:60px 55px 75px;background:linear-gradient(rgba(255,255,255,.72),rgba(255,250,252,.92));border-radius:20px;border:2px solid rgba(255,182,201,.35);box-shadow:0 30px 70px var(--shadow),0 10px 20px rgba(255,143,171,.08);transform:rotate(-.7deg);animation:letterIn .9s ease both}
+@keyframes letterIn{from{opacity:0;transform:translateY(30px) rotate(-3deg) scale(.95)}to{opacity:1;transform:translateY(0) rotate(-.7deg) scale(1)}}
+.tape{position:absolute;width:105px;height:28px;top:-13px;background:rgba(255,196,210,.7);border-radius:4px;box-shadow:0 3px 8px rgba(200,100,130,.08)}.tape.left{left:65px;transform:rotate(-7deg)}.tape.right{right:65px;transform:rotate(7deg)}
+.top-note{text-align:center;font-family:'Caveat',cursive;font-size:20px;color:#d887a1;margin-bottom:30px}
+.hello{font-family:'Caveat',cursive;font-size:clamp(44px,9vw,66px);line-height:1;color:var(--darkpink);margin-bottom:25px;text-align:center}
+.intro{min-height:105px;text-align:center;font-size:15px;line-height:1.9;color:#806873}
+.question{text-align:center;margin-top:25px}.small-heart{font-size:30px;color:var(--pink);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.question h1{font-family:'Caveat',cursive;font-size:clamp(42px,9vw,65px);line-height:1.05;color:#744e5d;margin:10px 0 35px}
+.buttons{position:relative;min-height:70px;display:flex;justify-content:center;align-items:center;gap:14px}
+.btn{border:0;min-height:54px;padding:14px 25px;border-radius:18px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}.btn:active{transform:scale(.94)}
+.yes{color:white;background:linear-gradient(135deg,#ff8fab,#e96c91);box-shadow:0 10px 25px rgba(233,108,145,.3)}.yes:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 15px 30px rgba(233,108,145,.35)}
+.no{color:#9b6075;background:#ffe1ea;min-width:130px}.no:hover{background:#ffd4e1}.no.running{position:fixed;z-index:9999;transition:left .3s cubic-bezier(.2,.8,.2,1),top .3s cubic-bezier(.2,.8,.2,1),transform .3s ease}
+.hint{margin-top:20px;font-family:'Caveat',cursive;font-size:20px;color:#c58b9e}
+.signature{margin-top:55px;text-align:right;font-family:'Caveat',cursive;font-size:21px;color:#a77b8b}.signature strong{display:block;color:var(--darkpink);font-size:29px}
+.footer{position:absolute;bottom:23px;left:0;right:0;text-align:center;font-family:'Caveat',cursive;font-size:19px;color:#bd8c9e}.footer span{color:var(--darkpink)}
+.hidden{display:none!important}.celebration{text-align:center;animation:celebrateIn .8s ease both}
+@keyframes celebrateIn{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.celebrate-heart{font-size:70px;display:inline-block;animation:heartBeat 1s infinite}@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.celebration h2{font-family:'Caveat',cursive;font-size:clamp(65px,13vw,95px);line-height:.9;color:var(--darkpink);margin:10px 0}.celebration .subtitle{font-family:'Caveat',cursive;font-size:27px;color:#795464;margin-bottom:25px}
+.message{padding:25px 22px;background:#fff;border-radius:18px;border:2px dashed #ffc1d2;box-shadow:0 10px 25px rgba(200,100,130,.08);text-align:left}.message p{font-size:14px;line-height:1.9;color:#765e69}.divider{text-align:center;font-family:'Caveat',cursive;color:var(--pink);font-size:23px;margin:17px 0}.closing{text-align:center;font-family:'Caveat',cursive;font-size:25px!important;color:var(--darkpink)!important}
+.restart{margin-top:25px;padding:10px 17px;border:0;background:transparent;color:#ae7b8d;font-family:'Poppins',sans-serif;font-size:12px;cursor:pointer;transition:.2s}.restart:hover{color:var(--darkpink);transform:translateY(-2px)}
+.confetti{position:fixed;bottom:-30px;z-index:99999;pointer-events:none;animation:rise 4s ease-out forwards}
+@keyframes rise{0%{opacity:0;transform:translateY(0) rotate(0) scale(.7)}15%{opacity:1}100%{opacity:0;transform:translateY(-110vh) rotate(360deg) scale(1.2)}}
+@media(max-width:600px){.wrapper{padding:25px 14px}.letter{min-height:690px;padding:50px 19px 70px;border-radius:18px}.tape{width:75px;height:23px}.tape.left{left:30px}.tape.right{right:30px}.top-note{font-size:17px;margin-bottom:25px}.hello{font-size:48px}.intro{font-size:13px;line-height:1.8;min-height:110px}.question{margin-top:15px}.question h1{font-size:46px;margin-bottom:30px}.buttons{flex-direction:column;gap:12px}.btn{width:190px}.no.running{width:auto}.signature{margin-top:45px}.message{padding:20px 17px}.message p{font-size:13px}.celebration .subtitle{font-size:23px}.bg-heart:nth-child(1){left:2%;font-size:35px}.bg-heart:nth-child(2){right:2%;font-size:27px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="bg-heart">♡</div><div class="bg-heart">♡</div><div class="bg-heart">♡</div><div class="bg-heart">♡</div>
+<div class="wrapper">
+<main class="letter">
+<div class="tape left"></div><div class="tape right"></div>
+<section id="questionPage">
+<div class="top-note">♡ a tiny letter for someone special ♡</div>
+<div class="hello" id="hello">Hai...</div>
+<div class="intro" id="intro"></div>
+<div class="question">
+<div class="small-heart">♡</div>
+<h1 id="questionText"></h1>
+<div class="buttons">
+<button class="btn yes" id="yesButton">❤️ Mau</button>
+<button class="btn no" id="noButton">🙈 Ga Mau</button>
+</div>
+<div class="hint">pilih yang bener yaa... 👉👈</div>
+</div>
+<div class="signature"><span>with all my courage,</span><strong id="sender">Namamu</strong></div>
+</section>
+<section id="celebrationPage" class="celebration hidden">
+<div class="celebrate-heart">💗</div><h2>YEAYYY!</h2>
+<div class="subtitle"><span id="partner"></span> akhirnya bilang mau 🥹💕</div>
+<div class="message"><p id="loveMessage"></p><div class="divider">♡　♡　♡</div><p class="closing" id="closing"></p></div>
+<button class="restart" id="restart">↺ Baca lagi dari awal</button>
+</section>
+<div class="footer">dibuat khusus buat <span id="footerName">kamu</span> ♡</div>
+</main>
+</div>
+<div id="confettiContainer"></div>
+<script>
+const DATA={
+nama:"ALYNN",
+pasangan:"CHIQUITA FELICIA JOSALYNN",
+panggilan:"ALYNN",
+pertanyaan:"Aku mau jujur aja deh. Selama kita deket, aku makin nyaman sama kamu, dan ternyata aku juga makin suka. Aku nggak mau cuma sebatas deket aja sama kamu. Jadi, kamu mau nggak kita jalanin ini lebih dari sekadar temenan?",
+pesan:"Jujur aku masih agak nggak nyangka kamu beneran mau sama aku wkwk. Tapi aku seneng banget, serius. Selama ini kita udah sering ngobrol, sering bareng, dan aku udah nyaman banget sama kamu. Makanya dari awal aku sebenernya takut juga buat ngomong, takut malah bikin semuanya jadi awkward atau malah berubah. Tapi sekarang kamu udah nerima aku, aku cuma mau bilang makasih. Makasih udah mau kasih aku kesempatan buat jadi orang yang lebih dari sekadar temen buat kamu. Aku juga nggak mau janji yang aneh-aneh atau yang terlalu tinggi, tapi aku bakal berusaha buat ngejaga hubungan ini sebaik mungkin. Aku pengen kita tetep jadi diri kita sendiri, tetep bisa bercanda, ngobrol random, saling cerita, dan kalau ada masalah jangan dipendem sendiri. Kalau nanti ada hal yang bikin kamu nggak nyaman sama aku, bilang aja, jangan dipendem. Aku juga bakal berusaha buat lebih ngerti kamu. Intinya aku seneng banget akhirnya bisa sama kamu. Semoga setelah ini kita bisa jalanin semuanya pelan-pelan, nggak perlu buru-buru, yang penting kita sama-sama nyaman dan sama-sama mau ngejalaninnya. ❤️",
+penutup:"Mulai sekarang, boleh ya aku sayang sama kamu lebih dari biasanya? 💗"
+};
+const questionPage=document.getElementById("questionPage"),celebrationPage=document.getElementById("celebrationPage"),hello=document.getElementById("hello"),intro=document.getElementById("intro"),questionText=document.getElementById("questionText"),sender=document.getElementById("sender"),partner=document.getElementById("partner"),loveMessage=document.getElementById("loveMessage"),closing=document.getElementById("closing"),footerName=document.getElementById("footerName"),yesButton=document.getElementById("yesButton"),noButton=document.getElementById("noButton"),restart=document.getElementById("restart");
+hello.textContent=`Hai, ${DATA.panggilan}...`;questionText.textContent=DATA.pertanyaan;sender.textContent=DATA.nama;partner.textContent=DATA.pasangan;loveMessage.textContent=DATA.pesan;closing.textContent=DATA.penutup;footerName.textContent=DATA.panggilan;
+const sentences=["Aku sebenarnya dari kemarin mau ngomong sesuatu...","Tapi kalau ngomong langsung, aku malah suka gugup sendiri 😭","Jadi kali ini aku coba lewat surat kecil ini.","Tolong dibaca sampai selesai yaa... ♡"];let sentenceIndex=0;
+function typeSentence(text,callback){let index=0;intro.textContent="";const timer=setInterval(()=>{intro.textContent+=text[index];index++;if(index>=text.length){clearInterval(timer);setTimeout(callback,500)}},32)}
+function startTyping(){function next(){if(sentenceIndex>=sentences.length)return;typeSentence(sentences[sentenceIndex],()=>{sentenceIndex++;if(sentenceIndex<sentences.length)setTimeout(next,300)})}next()}startTyping();
+const noTexts=["🙈 Ga Mau","Yakin? 🥺","Serius? 😭","Pikir lagi dong...","Jangan gituuu 🥺","Klik yang sebelah aja ❤️","Udah ga ada pilihan 😌"];let attempts=0,moved=false;
+document.addEventListener("mousemove",event=>{if(innerWidth<=700||!celebrationPage.classList.contains("hidden"))return;const rect=noButton.getBoundingClientRect(),centerX=rect.left+rect.width/2,centerY=rect.top+rect.height/2,distance=Math.hypot(event.clientX-centerX,event.clientY-centerY);if(distance<115)moveButton()});
+noButton.addEventListener("touchstart",event=>{event.preventDefault();moveButton()},{passive:false});noButton.addEventListener("click",event=>{event.preventDefault();moveButton()});
+function moveButton(){if(!moved){moved=true;const rect=noButton.getBoundingClientRect();noButton.style.width=rect.width+"px";noButton.style.height=rect.height+"px";noButton.classList.add("running")}attempts++;noButton.textContent=noTexts[Math.min(attempts,noTexts.length-1)];const safe=15,width=noButton.offsetWidth,height=noButton.offsetHeight,maxX=innerWidth-width-safe,maxY=innerHeight-height-safe;let x=Math.random()*(maxX-safe)+safe,y=Math.random()*(maxY-safe)+safe;const yesRect=yesButton.getBoundingClientRect(),distance=Math.hypot(x-yesRect.left,y-yesRect.top);if(distance<160){x=Math.min(maxX,x+190);y=Math.min(maxY,y+100)}noButton.style.left=x+"px";noButton.style.top=y+"px"}
+yesButton.addEventListener("click",()=>{questionPage.style.transition="opacity .5s ease, transform .5s ease";questionPage.style.opacity="0";questionPage.style.transform="scale(.95) translateY(-10px)";setTimeout(()=>{questionPage.classList.add("hidden");celebrationPage.classList.remove("hidden");createConfetti()},500)});
+function createConfetti(){const symbols=["♡","♥","💗","💕","✦","✧"];for(let i=0;i<30;i++){setTimeout(()=>{const item=document.createElement("div");item.className="confetti";item.textContent=symbols[Math.floor(Math.random()*symbols.length)];item.style.left=Math.random()*100+"%";item.style.fontSize=14+Math.random()*18+"px";item.style.animationDuration=2.5+Math.random()*2+"s";document.getElementById("confettiContainer").appendChild(item);setTimeout(()=>item.remove(),5000)},i*80)}}
+restart.addEventListener("click",()=>{celebrationPage.classList.add("hidden");questionPage.classList.remove("hidden");questionPage.style.opacity="1";questionPage.style.transform="scale(1) translateY(0)";attempts=0;moved=false;noButton.classList.remove("running");noButton.removeAttribute("style");noButton.textContent=noTexts[0];sentenceIndex=0;intro.textContent="";startTyping()});
+window.addEventListener("resize",()=>{if(!moved)return;const rect=noButton.getBoundingClientRect(),safe=15,maxX=innerWidth-rect.width-safe,maxY=innerHeight-rect.height-safe,x=Math.min(Math.max(rect.left,safe),maxX),y=Math.min(Math.max(rect.top,safe),maxY);noButton.style.left=x+"px";noButton.style.top=y+"px"});
+</script>
+</body>
+</html>
